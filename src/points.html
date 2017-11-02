@@ -1,0 +1,69 @@
+<template>
+  <section class="au-animate">
+    <h2>${username}${heading}</h2>
+    <div class="row au-stagger">
+      <!--<div class="well">
+          <h4>${points}</h4>
+          shift+alt+f
+        </div>-->
+      <div id="mainContainer" align="center">
+        <form id="mainForm">
+          <div id="canvasContainer">
+          <canvas style="float: left" id="myChart" width="400" height="400"></canvas>
+        </div>
+          <input type="hidden" id="inputX">
+          <div id="inputPanelX"> Значение X:
+            <!--	<input id="inputX"  type="text" size="40">-->
+            -5
+            <input name="radioX" type="radio" onclick="selectX(this, -5)" /> -4
+            <input name="radioX" type="radio" onclick="selectX(this, -4)" /> -3
+            <input name="radioX" type="radio" onclick="selectX(this, -3)" /> -2
+            <input name="radioX" type="radio" onclick="selectX(this, -2)" /> -1
+            <input name="radioX" type="radio" onclick="selectX(this, -1)" /> 0
+            <input name="radioX" type="radio" onclick="selectX(this, 0)" /> 1
+            <input name="radioX" type="radio" onclick="selectX(this, 1)" /> 2
+            <input name="radioX" type="radio" onclick="selectX(this, 2)" /> 3
+            <input name="radioX" type="radio" onclick="selectX(this, 3)" />
+          </div>
+
+          <div>
+            Значение Y:
+            <input id="inputY" type="text" size="34">
+          </div>
+
+          <input type="hidden" id="inputR">
+          <div id="inputPanelR">Значение R: -5
+            <input name="radioY" type="radio" onclick="selectR(this, -5)" /> -4
+            <input name="radioY" type="radio" onclick="selectR(this, -4)" /> -3
+            <input name="radioY" type="radio" onclick="selectR(this, -3)" /> -2
+            <input name="radioY" type="radio" onclick="selectR(this, -2)" /> -1
+            <input name="radioY" type="radio" onclick="selectR(this, -1)" /> 0
+            <input name="radioY" type="radio" onclick="selectR(this, 0)" /> 1
+            <input name="radioY" type="radio" onclick="selectR(this, 1)" /> 2
+            <input name="radioY" type="radio" onclick="selectR(this, 2)" /> 3
+            <input name="radioY" type="radio" onclick="selectR(this, 3)" />
+          </div>
+          
+          <button id="submitButton" onclick="sendForm()">Добавить точку</button>
+        </form>
+      </div>
+
+    </div>
+    <img id="graphimg" hidden="hidden" alt="graph" src="img/graph.png" />
+    <table id="pointTable">
+      <tr>
+        <td>Координата Х</td>
+        <td>Координата Y</td>
+        <td>Попадание</td>
+      </tr>
+      <tr repeat.for="point of points">
+        <td>${point.x}</td>
+        <td>${point.y}</td>
+        <td>${point.isInside}</td>
+      </tr>
+    </table>
+
+    <script src="src/canvas.js" />
+    </div>
+  </section>
+</template>

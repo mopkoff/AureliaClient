@@ -1,0 +1,31 @@
+<template>
+  <section>
+    <h2>${heading}</h2>
+
+    <form role="form" submit.delegate="signin()">
+      <div class="form-group">
+        <label for="login">Login</label>
+        <input type="text" value.bind="login" class="form-control" id="login" placeholder="Login">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" value.bind="password" class="form-control" id="password" placeholder="Password">
+      </div>
+      <button type="submit" class="btn btn-default">Login</button>
+    </form>
+    
+    <hr>
+    <div class="alert alert-danger" if.bind="loginError">${loginError}</div>
+  </section>
+  
+    <div class="signup-or-separator">
+            <h6 class="text">or</h6>
+            <hr>
+          </div>
+        </form>
+
+        <button class="btn btn-block btn-google-plus" click.delegate="authenticate('google', true)">
+          <span class="ion-social-googleplus"></span>Sign in with Google
+        </button>
+
+</template>
